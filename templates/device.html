@@ -1,0 +1,27 @@
+<head>
+  <title> Device Detection </title>
+  </head>
+  <body>
+    <h1 id="baka"> </h1>
+    <script type="text/javascript">
+
+      var platform = document.getElementById('baka');
+
+      if (navigator.userAgent.match(/iPhone/i)){
+        platform.textContent = "iPhone";
+      }
+      else if (navigator.userAgent.match(/iPad/i)){
+        platform.textContent = "iPad";
+      }
+      else if (navigator.userAgent.match(/Mac OS X/i)){
+        platform.textContent = "Mac";
+      }
+
+      else if (screen.width <= 699){
+        platform.textContent = "Mobile"
+      }
+      else {
+        platform.textContent = "PC";
+      }
+    </script>
+  </body>

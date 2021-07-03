@@ -1,0 +1,87 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us</title>
+<link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='about.css')}}">
+</head>
+
+<body>
+
+  <!--Script used to make the read more functionality-->
+<script>
+  function myFunction() {
+    var dot = document.getElementById("dot");
+    var more = document.getElementById("more");
+    var btn = document.getElementById("myBtn");
+
+    if (dot.style.display === "none") {
+      dot.style.display = "inline";
+      btn.innerHTML = "Read more";
+      more.style.display = "none";
+    } else {
+      dot.style.display = "none";
+      btn.innerHTML = "Read less";
+      more.style.display = "inline";
+    }
+  }
+  </script>
+
+<div class = "back">
+
+ <header>
+
+ 	<h1>About Us</h1>
+  <h2>Freelance photographer</h2>
+
+
+ </header>
+ <div class="row">
+ 	<div class="left-column">
+ 	  <div class="card">
+ 		<h2>We are Creative! Are You?</h2>
+
+
+
+     <img src="{{ url_for('static', filename='img/about.jpg')}}">
+
+
+ 		<p> We are a small website with not just big dreams, but the likeliness to
+    help others express. People are amazing. Everyone sees the world in a different
+  perspective, however slight the difference might be. Some can travel the world while
+some cannot enjoy this luxery due to different circumstances, However they must be
+doing things that travellers cannot do. Everyone lives different lives and we believe
+that every life is worth expressing. Keeping our goal in mind, we strive to reach as many
+users as possible, so that they can use this luxery of expressing and sharing their thoughts
+with the rest of the world. This is why we kept our services free for you for the first two months.<b>
+JOIN US NOW TO EXPRESS!</p>
+ 	  </div>
+
+</div>
+
+ 	<div class="right-column">
+    <h2> Featured Blog of the Month </h2>
+ 		<div class="card3">
+ 			 <h2>Read Anthony's Blog</h2>
+ 			 <img src="{{ url_for('static', filename='img/2.png')}}" alt="me"/>
+ 			 <p>I am just a human just like
+          You.
+          <span id="dot">...</span><span id="more">Being Human is really nice I
+          Believe. Even though its tough sometimes because life is hard, but it goes
+          on. I am very happy to be a humanan and live a life. Thats it for today foks,
+          see you all in the next one</span></p>
+<button onclick="myFunction()" id="myBtn">Read more</button></p>
+ 		</div>
+
+
+
+ 	</div>
+ </div>
+
+<footer>
+	<h2>Pink Floyd Inc.</h2>
+  <h1> We are <b> Creative </h1>
+</footer>
+</div>
+</body>
+</html>

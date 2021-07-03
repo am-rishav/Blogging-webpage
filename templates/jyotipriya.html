@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jyotipriya</title>
+<link rel="shortcut icon" href="https://www.seekpng.com/png/detail/476-4760343_download-neon-plus-sign-clipart-computer-icons-clip.png">
+<link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='style.css')}}">
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+</head>
+<body>
+<div class = "back">
+  <style>
+body {
+  background-image: url("{{ url_for('static', filename='img/ba3.jpg')}}");
+
+}
+</style>
+ <header>
+
+ 	<h1>Jyotipriya's Blog</h1>
+  <h2>Freelance photographer</h2>
+
+
+ </header>
+
+ <div class="row">
+ 	<div class="left-column">
+ 	  <div class="card">
+ 		<h2>On that wonderful day</h2>
+ 		<h5>It was a bright and sunny day, February 8, 2021</h5>
+ 		<img src="{{ url_for('static', filename='img/1.png')}}" alt="blog "/>
+ 		<p>What a wonderful day it was, full of wonders. I often wonder how wonderful england must have been
+    to provide us with. Wonderful time in a wonderful day in a wonderful week in a wonderful month in a
+    wonderful year in a wonderful decade in a wonderful century in a wonderful millenium in a wonderful
+    in a wonderful whatever in a wonderful beach in a wonderful area in a wonderful town in  a wonderful
+    in a wonderful countryside of a wonderful island in a wonderful country of a wonderful continent in
+    this wonderful planet based in pur wonderful solar system of our wonderful galaxy in this wonderful
+    universe duh duh i hate writing a blog.</p>
+ 		<p>Write a paragraph here</p>
+ 	  </div>
+ 	  <div class="card">
+ 		<h2>Lively Markets</h2>
+ 		<h5>Camden Town, Feb 2, 2021</h5>
+ 		<img src="{{ url_for('static', filename='img/3.png')}}" alt="blog "/>
+ 		<p>Near the Umbrellas</p>
+ 		<p>Camden Town is very soulful. Every makrket describes its own story with its theme.
+    Home to a number of small and big shops, most of them specializing in clothing and
+  many street food stalls. the streets are highly influenced by the punk culture and it
+is one of the party hotspots of London. With many pubs and a lovely canalside, this place
+has to offer something for everyone, be it friday night with friends or a date night With
+your girlfriend, you will not be disappointed. </p>
+ 	  </div>
+    <div class="card">
+
+      <h2> Add a new Blog </h2>
+      <form method="POST">
+  <label for="text">Add Text:</label><br>
+  <input type="text" id="text" name="text" value="New post"><br>
+  <button type="submit" class="button is-success">
+    Post
+  </button>
+</form>
+<p> {{ blog }} <p>
+</div>
+ 	</div>
+
+ 	<div class="right-column">
+ 		<div class="card3">
+ 			 <h2>About Me</h2>
+ 			 <img src="{{ url_for('static', filename='img/2.png')}}" alt="me"/>
+ 			 <p>I am just a human just like
+          You. Being Human is really nice I
+          Believe. Even though its tough sometimes because life is hard, but it goes
+          on. I am very happy to be a humanan and live a life. Thats it for today foks,
+          see you all in the next one.</p>
+ 		</div>
+
+     		<div class="card4">
+     			 <h3>Popular Post</h3>
+     			 <img src="{{ url_for('static', filename='img/4.png')}}" alt="popular"/>
+     			 <img src="{{ url_for('static', filename='img/5.png')}}" alt="popular"/>
+     			 <img src="{{ url_for('static', filename='img/6.png')}}" alt="popular"/>
+     		</div>
+     		<div class="card2">
+     			<h3>Follow Us</h3>
+
+     			<p> <a href="https://www.instagram.com/am_rishav/"><img src="{{ url_for('static', filename='img/Instagram.png')}}" alt="popular"  width="40"></a> am_rishav <br>
+          <a href="https://www.facebook.com/rishav.saha.794/"> <img src="{{ url_for('static', filename='img/Facebook.png')}}" alt="popular"  width="40" ></a>  Rishav Saha<br>
+          <a href="https://twitter.com/RishavSaha">  <img src="{{ url_for('static', filename='img/Twitter.png')}}" alt="popular"  width="40"></a>  RishavSaha<br>
+        </p>
+
+     		</div>
+
+    <div class="card4">
+      <h2> Upload Files here </h2>
+      <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+
+          <strong>Image:</strong><br>
+          <input id="img-picker" type="file" name="file" accept="image/*" multiple>
+          <br>
+          <strong>Video:</strong><br>
+          <input id="vid-picker" type="file" name="file" accept="video/*" multiple>
+          <br>
+          <strong>Audio:</strong><br>
+          <input id="audio-picker" type="file" name="file" accept="audio/*" multiple>
+          <div id="msg"></div><br>
+          <input type="submit" value="Upload!" id="upload-button">
+      </form>
+
+    </div>
+    <div class="card4">
+      <!--Using geoplugin to get location of user-->
+      <script language="Javascript">
+
+
+
+      	document.write("Seems that you are from "+geoplugin_city()+", "+geoplugin_countryName());
+
+        </script>
+        <p id="baka"> </p>
+
+        <!--Using navigator.userAgent API to get devices used-->
+<script type="text/javascript">
+
+        var dev = document.getElementById('baka');
+
+        if (navigator.userAgent.match(/iPhone/i)){
+          dev.textContent = "You are using an iPhone";
+        }
+        else if (navigator.userAgent.match(/iPad/i)){
+          dev.textContent = "You are using an iPad";
+        }
+        else if (navigator.userAgent.match(/Mac OS X/i)){
+          dev.textContent = "You are using a Mac";
+        }
+
+        else if (screen.width <= 699){
+          dev.textContent = "You are using a Mobile"
+        }
+        else {
+          dev.textContent = "You are using a PC";
+        }
+        </script>
+
+<!--This is Jinja message flashing-->
+      <p> Your ip address is: {{ ip_addr }} </p>
+
+    </div>
+
+ 	</div>
+ </div>
+
+<footer>
+  <h2>Pink Floyd Inc.</h2>
+  <h1> We are <b> Creative </h1>
+</footer>
+</div>
+</body>
+
+</html>
